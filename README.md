@@ -1,6 +1,6 @@
 # mbtiles-serve
 
-Fast HTTP server serving map tiles directly from a mbtiles file. It is built on the mapbox [node-mbtiles](https://github.com/mapbox/node-mbtiles) library without any other dependencies (apart cli meow).
+Fast HTTP server serving map tiles directly from a mbtiles file. It is built on the mapbox [node-mbtiles](https://github.com/mapbox/node-mbtiles) library without any other dependencies (apart cli meow). Repository was forked from the original.
 
 ## Installation
 
@@ -12,17 +12,19 @@ npm install mbtiles-serve
 
 ## Usage
 
+You will need to build the Docker image and run the container in order to host the server.
+
 ```sh
-mbtiles-serve norway.mbtiles
+docker build -t toprakefe722/mbtiles-server-deimos .
+
+docker run -p 3000:3000 toprakefe722/mbtiles-server-deimos:latest
 ```
 
-Once is server running you can request tiles from
-`http://localhost:8080?x=0&y=0&z=0`
-For your convinience there is a simple Leaflet map server at the root so you can easily preview map tiles. It can be found at `http://localhost:8080`
+The end point is "http://localhost:3000/?z={z}&x={x}&y={y}.png".
 
 ## Development
 
-PRs are more than welcome. Start by cloning your fork and installing all the dependencies with
+PRs are more than welcome. Start by installing all the dependencies with
 
 ```sh
 yarn
@@ -31,17 +33,7 @@ yarn
 You can run it directly from the repo by
 
 ```sh
-yarn start input.mbtiles --port 3000
+yarn start tiles.mbtiles --port 3000
 ```
 
-Once you are happy with you changes you can try it globaly with
-
-```sh
-npm global install .
-```
-
-## Publishing
-
-```sh
-npx np
-```
+Once you are happy with you changes you can push to the repository or build the container image right away.
