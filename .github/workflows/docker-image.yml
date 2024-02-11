@@ -23,5 +23,6 @@ jobs:
       env:
         USERNAME: ${{ secrets.DOCKER_USERNAME }}
         PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        IMAGE_NAME: "toprakefe722/mbtiles-server-deimos"
         TAG_NAME: "latest"
         BUILDX: "true"
