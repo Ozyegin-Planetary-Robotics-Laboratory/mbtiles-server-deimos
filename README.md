@@ -42,4 +42,4 @@ Once you are happy with your changes you can push to the repository right away.
 
 ### Map Development
 
-You can overwrite the local tiles.mbtiles file with your own tileset. The ideal toolset for this is (QGIS)[https://qgis.org/en/site/].
+You can overwrite the local tiles.mbtiles file with your own tileset. The ideal toolset for this is [QGIS](https://qgis.org/en/site/).
